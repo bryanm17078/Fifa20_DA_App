@@ -1,2 +1,2 @@
-# fifa-20-DA-App
-Database Backed Flask Data Analysis application
+# Fifa20_DA-App
+Database Backed  Data Analysis application using flask,SQL, and python
