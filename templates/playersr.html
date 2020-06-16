@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script
+    <meta charset="UTF-8">
+ <title>Team</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <h1 class="logo">Fifa 20 data analysis app</h1>
+            <strong>
+               <nav>
+                  <ul class="menu">
+                      <li><a href="{{ url_for('index') }}">Home</a></li>
+                     <li><a href="{{ url_for('players') }}">Players</a></li>
+                     <li><a href="{{ url_for('teamsda') }}">Team</a></li>
+                  </ul>
+               </nav>
+            </strong>
+         </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+   </body>
+</head>
+<body>
+<br>
+
+<h1>Chosen player: {{players}}</h1>
+
+<body>
+   {% for p in plot_urlgp%}
+   <a><img src="data:image/png;base64, {{ p }}"></a>
+   {% endfor %}
+</body>
+<body>
+   {% for p in plot_urldp%}
+   <a><img src="data:image/png;base64, {{ p }}"></a>
+   {% endfor %}
+</body>
+<body>
+   {% for p in plot_urlmp%}
+   <a><img src="data:image/png;base64, {{ p }}"></a>
+   {% endfor %}
+</body>
+
+<body>
+   {% for p in plot_urlap%}
+   <a><img src="data:image/png;base64, {{ p }}"></a>
+   {% endfor %}
+</body>
+
+
+
+
+<footer>
+<div class="footer">
+ <p>Copyright © Bryan Mensah</p>
+</div>
+   </footer>
+</html>

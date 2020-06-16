@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script
+    <meta charset="UTF-8">
+    <title>Team</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <h1 class="logo">Fifa 20 data analysis app</h1>
+            <strong>
+               <nav>
+                  <ul class="menu">
+                      <li><a href="{{ url_for('index') }}" >Home</a></li>
+                     <li><a href="{{ url_for('players') }}">Players</a></li>
+                     <li><a href="{{ url_for('teamsda') }}">Team</a></li>
+                  </ul>
+               </nav>
+            </strong>
+         </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+   </body>
+</head>
+<body>
+
+
+
+<br>
+
+<h1>Selected Team: {{team}}</h1>
+
+<h2>Transfer Targets</h2>
+<div class=page>
+{% for table in data %}
+            {{ table|safe }}
+{% endfor %}
+</div>
+
+
+</body>
+
+
+<h3>Radar Charts</h3>
+<h3>Goalkeepers</h3>
+   <body>
+   {% for p in plot_urlg%}
+   <a><img src="data:image/png;base64, {{ p }}"></a>
+   {% endfor %}
+</body>
+<h3>Defenders</h3>
+<body>
+   {% for p in plot_urld%}
+   <a><img src="data:image/png;base64, {{ p }}"></a>
+   {% endfor %}
+</body>
+<h3>Midfielders</h3>
+<body>
+   {% for p in plot_urlm%}
+   <a><img src="data:image/png;base64, {{ p }}"></a>
+   {% endfor %}
+</body>
+<h3>Attackers</h3>
+<body>
+   {% for p in plot_urla%}
+   <a><img src="data:image/png;base64, {{ p }}"></a>
+   {% endfor %}
+</body>
+<body>
+
+    {% for id in ids %}
+        <h3>{{id}}</h3>
+        <div id="{{id}}"></div>
+    {% endfor %}
+
+</body>
+
+
+<footer>
+        <script>
+
+        var graphs = {{graphJSON | safe}};
+        var ids = {{ids | safe}};
+
+        for(var i in graphs) {
+            Plotly.plot(ids[i], // the ID of the div, created above
+                        graphs[i].data,
+                        graphs[i].layout || {});
+        }
+
+    </script>
+</footer>
+</body>
+<div class="footer">

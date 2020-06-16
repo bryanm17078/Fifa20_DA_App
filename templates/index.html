@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Fifa 20 data analysis app </title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <h1 class="logo">Fifa 20 data analysis app</h1>
+            <strong>
+               <nav>
+                  <ul class="menu">
+                      <li><a href="{{ url_for('index') }}">Home</a></li>
+                     <li><a href="{{ url_for('players') }}">Players</a></li>
+                     <li><a href="{{ url_for('teamsda') }}">Team</a></li>
+                  </ul>
+               </nav>
+            </strong>
+         </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+   </body>
+
+
+
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+</style>
+
+
+<style>
+.container
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<center>Here is my fifa 20 data analysis app<br>
+The app provides statistical analysis of the team and players in the fifa 20 game.
+<br>Note: The site uses the data from the start of the game so players may have moved to a club or their values and ratings/stats may
+   have decreased or increased with the updates. <br>So be aware there may be some differences.</center>
+
+
+<div class="container">
+  <div class="center">
+
+                     <button><a href="/players.html"style="text-decoration:none;color:black;">Players</a></button>
+                     <button><a href="{{ url_for('teamsda') }}"style="text-decoration:none;color:black;">Team</a></button>
+</div>
+</div>
+</body>
+<div class="footer">
+ <p>Copyright © Bryan Mensah</p>
+</div>
+</html>

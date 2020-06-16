@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+
+  <head>
+    <title>Team Data Analysis</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/main.css') }}">
+    <header>
+         <div class="container">
+            <h1 class="logo">Fifa 20 data analysis app</h1>
+            <strong>
+               <nav>
+                  <ul class="menu">
+                      <li><a href="{{ url_for('index') }}">Home</a></li>
+                     <li><a href="{{ url_for('players') }}">Players</a></li>
+                     <li><a href="{{ url_for('teamsda') }}">Team</a></li>
+                  </ul>
+               </nav>
+            </strong>
+         </div>
+      </header>
+    </head>
+</html>
+<body>
+<style>
+.container
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+ <div class="center">
+      <h2> Team Analysis</h2>
+     <center> Detailed analysis of a team in fifa 20
+         <br> Please ensure your spelling is correct and the team is in the game.
+     <br> Please look at sofifa website to check for correct spelling or to check if the team is present </center>
+ </div>
+<div class="container">
+  <div class="center">
+   <form method="POST">
+    <input name="team">
+    <input type="submit">
+</form>
+</div>
+</div>
+</body>
+</body>
+<div class="footer">
+ <p>Copyright © Bryan Mensah</p>
+</div>
+</html>

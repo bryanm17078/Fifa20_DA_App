@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Players</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <h1 class="logo">Fifa 20 data analysis app</h1>
+            <strong>
+               <nav>
+                  <ul class="menu">
+                      <li><a href="{{ url_for('index') }}">Home</a></li>
+                     <li><a href="{{ url_for('players') }}">Players</a></li>
+                     <li><a href="{{ url_for('teamsda') }}">Team</a></li>
+                  </ul>
+               </nav>
+            </strong>
+         </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+   </body>
+</head>
+</head>
+<body>
+
+ <div class="center">
+      <h2> Player Analysis</h2>
+     <center>Compare selected player against some of the best players who play in a similar position to them.
+    <br> Please ensure your spelling is correct and the players is in the game.
+    <br> Please look at sofifa website to check for correct spelling or to check if the player is present</center>
+ </div>
+<body>
+<style>
+.container
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+</body>
+<div class="container">
+  <div class="center">
+   <form method="POST">
+     <input name="player">
+    <input type="submit">
+</form>
+</div>
+</div>
+</body>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+</style>
+
+<footer>
+<div class="footer">
+ <p>Copyright © Bryan Mensah</p>
+</div>
+</footer>
+</html>
+
